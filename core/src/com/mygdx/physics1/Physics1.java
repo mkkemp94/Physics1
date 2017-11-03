@@ -25,7 +25,7 @@ public class Physics1 extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 
-		// We need a logoSprite since the logoTexture is going to move.
+		// We need a logo_sprite since the logo_texture is going to move.
 		logoTexture = new Texture("badlogic.jpg");
 		logoSprite = new Sprite(logoTexture);
 
@@ -39,15 +39,15 @@ public class Physics1 extends ApplicationAdapter {
 		// Allow it to sleep while inactive.
 		world = new World(new Vector2(0, -98f), true);
 
-		// Create a logoBody definition, which defines the physics object type and position.
+		// Create a logo_body definition, which defines the physics object type and position.
 		BodyDef logoBodyDef = new BodyDef();
 		logoBodyDef.type = BodyDef.BodyType.DynamicBody;
 
 		// Use 1 to 1 dimensions - so 1 unit in the physics engine is 1 pixel.
-		// Set the logoBody to the same position as the sprite.
+		// Set the logo_body to the same position as the sprite.
 		logoBodyDef.position.set(logoSprite.getX(), logoSprite.getY());
 
-		// Create a logoBody in the world using this definition.
+		// Create a logo_body in the world using this definition.
 		logoBody = world.createBody(logoBodyDef);
 
 		// Define the position of the physics shape.
