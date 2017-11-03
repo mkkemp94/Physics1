@@ -49,14 +49,12 @@ public class Physics3 extends ApplicationAdapter implements InputProcessor {
                 -Gdx.graphics.getHeight() / 2
         );
 
-        // Create a world with no gravity.
         world = new World(new Vector2(0, -1f), true);
 
         // Create body in world.
         BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         bodyDef.position.set(
-                // Body's position is going to be off from the sprite's...
                 (logo_sprite.getX() + logo_sprite.getWidth() / 2) / PIXELS_TO_METERS,
                 (logo_sprite.getY() + logo_sprite.getHeight() / 2) / PIXELS_TO_METERS
         );
@@ -77,7 +75,7 @@ public class Physics3 extends ApplicationAdapter implements InputProcessor {
         logo_body.createFixture(fixtureDef);
         polygonShape.dispose();
 
-        // Wall body.
+        // Floor body.
         BodyDef bodyDef2 = new BodyDef();
         bodyDef2.type = BodyDef.BodyType.StaticBody;
         float w = Gdx.graphics.getWidth() / PIXELS_TO_METERS;
